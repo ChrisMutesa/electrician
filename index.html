@@ -1,0 +1,220 @@
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <script src="script.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Strom</title>
+  </head>
+  <body>
+    <!-- Hero section -->
+    <section id="hero">
+      <!-- Above nav contacts -->
+      <div class="bg-black bg-opacity-30">
+        <div
+          class="max-w-4xl mx-auto text-center text-white text-xs flex justify-around md:items-center md:space-x-2 pt-2 pb-2"
+        >
+          <div class="flex">
+            <img
+              src="images/call-outline.svg"
+              alt=""
+              class="h-4 pr-6 hidden md:block"
+            />
+            <p>+32 412 345 6789</p>
+          </div>
+          <div class="flex">
+            <img
+              src="images/mail-outline.svg"
+              alt=""
+              class="h-4 pr-6 hidden md:block"
+            />
+            <p>electrician@telenet.be</p>
+          </div>
+          <div class="flex">
+            <img
+              src="images/time-outline.svg"
+              alt=""
+              class="h-4 pr-6 hidden md:block"
+            />
+            <p>Mon- Sat 9:00 - 15:00</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero container -->
+      <div class="container max-w-6xl mx-auto px-6 py-12">
+        <!-- Menu / Logo container -->
+        <nav class="flex items-center justify-between font-bold text-white">
+          <!-- Logo -->
+
+          <h1 class="text-3xl text-bold md:pl-10 md:ml-8">
+            Elec<span class="text-[rgba(213,159,78,0.75)]">tric</span>al
+          </h1>
+          <!-- Menu -->
+          <div
+            class="hidden h-10 font-alata md:flex md:space-x-8 md:items-center"
+          >
+            <div class="group text-[rgba(213,159,78,0.75)]">
+              <a href="#home">Home</a>
+              <div
+                class="mx-2 group-hover:border-b group-hover:border-gold"
+              ></div>
+            </div>
+            <div class="group">
+              <a href="#about">About us</a>
+              <div
+                class="mx-2 group-hover:border-b group-hover:border-gold"
+              ></div>
+            </div>
+            <div class="group">
+              <a href="#services">Services</a>
+              <div
+                class="mx-2 group-hover:border-b group-hover:border-gold"
+              ></div>
+            </div>
+            <div class="group">
+              <a href="#gallery">Gallery</a>
+              <div
+                class="mx-2 group-hover:border-b group-hover:border-gold"
+              ></div>
+            </div>
+            <div class="group">
+              <a href="#contact">Contact</a>
+              <div
+                class="mx-2 group-hover:border-b group-hover:border-gold"
+              ></div>
+            </div>
+          </div>
+          <!-- Hamburger button -->
+          <div class="md:hidden">
+            <button
+              id="menu-btn"
+              type="button"
+              class="z-40 block hamburger md:hidden focus:outline-none"
+            >
+              <!-- For a better translation into X button -->
+              <span class="hamburger-top"></span>
+              <span class="hamburger-middle"></span>
+              <span class="hamburger-bottom"></span>
+            </button>
+          </div>
+        </nav>
+
+        <!--  Mobile Menu -->
+        <div
+          id="menu"
+          class="absolute top-0 bottom-0 left-0 hidden flex-col self-end w-full min-h-screen py-1 pt-40 pl-12 space-y-3 text-lg text-white uppercase bg-black bg-opacity-70"
+        >
+          <a href="#about" class="hover:text-[rgba(213,159,78,0.75)]">About</a>
+          <a href="#careers" class="hover:text-[rgba(213,159,78,0.75)]"
+            >Careers</a
+          >
+          <a href="#" class="hover:text-[rgba(213,159,78,0.75)]">Events</a>
+          <a href="#events" class="hover:text-[rgba(213,159,78,0.75)]"
+            >Products</a
+          >
+          <a href="#support" class="hover:text-[rgba(213,159,78,0.75)]"
+            >Support</a
+          >
+        </div>
+
+        <div class="pt-16">
+          <h2
+            class="max-w-lg text-center mx-auto mt-32 p-4 mb-5 font-alata text-3xl text-white uppercase md:pt-10 md:pl-10 md:pr-10 md:pb-2 md:mt-8 md:ml-8 md:mr-8 md:mx-0 md:text-4xl md:text-left"
+          >
+            We provide the best electrical services
+          </h2>
+          <p
+            class="max-w-xl text-center mx-auto mb-32 pl-4 pr-4 pb-4 font-alata text-lg text-white md:pl-10 md:pr-10 md:pb-10 md:mb-8 md:ml-8 md:mr-8 md:mx-0 md:text-2xl md:text-left"
+          >
+            With our high level of professionalism, we turn your dream home
+            ideas into reality in a short time!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+      <!-- About Container -->
+      <div class="container flex flex-col mx-auto p-6 md:flex-row">
+        <!-- Content Container -->
+        <div
+          class="flex flex-col space-y-10 mb-16 md:ml-16 md:mt-16 md:w-1/2 md:mx-w-lg"
+        >
+          <h1
+            class="text-4xl max-w-md pt-8 md:text-4xl font-bold text-center mx-auto md:mx-0 md:text-6xl md:text-left"
+          >
+            Welcome to
+            <span class="text-[rgba(213,159,78,0.75)]">Electrician Pro</span>
+          </h1>
+          <p
+            class="text-xl md:text-xl text-center text-gray-400 md:max-w-md md:text-left"
+          >
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde
+            tenetur natus nobis voluptates sit iste corrupti, maiores nulla
+            sunt. Sit cum minus esse temporibus iste!
+          </p>
+
+          <!-- Icons and show talents -->
+          <!-- icons container -->
+          <div class="flex flex-row space-x-8 mx-auto md:mx-0">
+            <!-- 1st col -->
+            <div class="flex flex-col">
+              <div class="flex flex-row items-center">
+                <img
+                  src="images/Bildschirmfoto 2023-02-27 um 14.31.05.png"
+                  alt=""
+                  class="h-10 pr-2"
+                />
+                <p class="text-gray-500 font-bold">500 CLIENTS WE HAVE</p>
+              </div>
+              <div class="flex flex-row items-center">
+                <img
+                  src="images/Bildschirmfoto 2023-02-27 um 14.31.05.png"
+                  alt=""
+                  class="h-10 pr-2 text-bold"
+                />
+                <p class="text-gray-500 font-bold">170 HIGH RANKING</p>
+              </div>
+            </div>
+            <!-- 2nd col -->
+            <div class="flex flex-col">
+              <div class="flex flex-row items-center">
+                <img
+                  src="images/Bildschirmfoto 2023-02-27 um 14.31.05.png"
+                  alt=""
+                  class="h-10 pr-2 text-bold"
+                />
+                <p class="text-gray-500 font-bold">100 TOP EXPERTS</p>
+              </div>
+              <div class="flex flex-row items-center">
+                <img
+                  src="images/Bildschirmfoto 2023-02-27 um 14.31.05.png"
+                  alt=""
+                  class="h-10 pr-2 text-bold"
+                />
+                <p class="text-gray-500 font-bold">37 ONLINE STRATEGIES</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image -->
+        <div class="mb-24 mx-auto md:w-180 md:mb-0 md:pt-12 md:mt-16 md:w-1/2">
+          <img
+            src="/images/mika-baumeister--oXb5tA61wI-unsplash.jpg"
+            alt=""
+            class="rounded-lg transform hover:scale-105 duration-200"
+          />
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
