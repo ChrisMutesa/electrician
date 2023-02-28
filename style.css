@@ -37,6 +37,25 @@
   min-height: 100vh;
 }
 
+#quality {
+  background-image: url("images/safari.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  max-width: 1500px;
+  height: 230px;
+  filter: brightness(80%);
+}
+
+@media (max-width: 900px) {
+  #quality {
+    background-image: url("images/safari.jpeg");
+    background-position: center;
+    height: 120px;
+    filter: brightness(80%);
+  }
+}
+
 @media (max-width: 576px) {
   #hero {
     background-image: url("images/imageedit_1_3426126740.jpg");
