@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="input.css" />
     <title>Strom</title>
   </head>
-  <body>
+  <body class="dark:bg-darkBlue dark:text-white">
     <!-- Hero section -->
     <section id="hero">
       <!-- Above nav continput.css-->
@@ -483,7 +483,14 @@
             services? Need details about our offers? Please us know, we are here
             for you!
           </p>
-          <form action="#" class="space-y-8">
+          <form
+            action="https://formsubmit.co/d4ebc41359a616f9598081920aa34c02"
+            method="POST"
+            class="space-y-8"
+          >
+            <!-- Just in case -->
+            <!-- https://formsubmit.co/ -->
+            <!-- https://formsubmit.co/el/yojixa -->
             <div>
               <label
                 for="email"
@@ -493,6 +500,7 @@
               <input
                 type="email"
                 id="email"
+                name="Name"
                 class="shadow-sm bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5"
                 placeholder="e.g: name@telenet.be"
                 required
@@ -506,6 +514,7 @@
               >
               <input
                 type="text"
+                name="Subject"
                 id="subject"
                 class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-200 shadow-sm focus:ring-primary-500 focus:border-primary-500"
                 placeholder="Let us know how we can help you"
@@ -521,6 +530,7 @@
               <textarea
                 id="message"
                 rows="6"
+                name="Message"
                 class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-200 focus:ring-primary-500 focus:border-primary-500"
                 placeholder="Leave a comment..."
               ></textarea>
