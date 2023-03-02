@@ -166,7 +166,7 @@
           </div>
         </div>
         <!-- Dark/Light Mode Button -->
-        <div class="absolute top-1 right-4 z-20">
+        <div class="fixed bottom-4 right-2 z-20">
           <button
             id="theme-toggle"
             class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none animate-pulse ring-[rgba(213,159,78,0.75)] dark:focus:ring-gray-700 rounded-lg text-sm p-2 5"
@@ -174,7 +174,7 @@
             <!-- Dark SVG Icon -->
             <svg
               id="theme-toggle-dark-icon"
-              class="w-6 h-6 hidden text-noir3 opacity-60"
+              class="w-7 h-7 hidden text-noir3 opacity-60"
               fill="currentColor"
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
@@ -186,7 +186,7 @@
             <!-- Light SVG Icon -->
             <svg
               id="theme-toggle-light-icon"
-              class="w-6 h-6 hidden"
+              class="w-7 h-7 hidden"
               fill="currentColor"
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
@@ -327,7 +327,9 @@
         </div>
 
         <!-- Image -->
-        <div class="mb-8 mx-auto md:w-180 md:mb-0 md:pt-16 md:mt-8 md:w-1/2">
+        <div
+          class="mb-8 mx-auto md:w-180 md:mb-0 md:pt-16 md:mt-8 md:w-1/2 relative z-30"
+        >
           <img
             src="images/mika-baumeister--oXb5tA61wI-unsplash.jpg"
             alt=""
@@ -567,7 +569,7 @@
 
         <!-- Image -->
         <div
-          class="mb-8 mx-auto md:w-180 md:mb-0 md:pt-8 md:mt-16 md:w-1/2 scale-90"
+          class="mb-8 mx-auto md:w-180 md:mb-0 md:pt-8 md:mt-16 md:w-1/2 scale-90 relative z-30"
         >
           <img
             src="images/depositphotos_201741994-stock-photo-view-businessman-hand-ranking-stars.jpeg"
@@ -613,7 +615,7 @@
                 type="email"
                 id="email"
                 name="Name"
-                class="shadow-sm bg-gray-50 border border-noir2 border-opacity-40 dark:border-blanc4 dark:border-opacity-40 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-darkBlue"
+                class="shadow-sm bg-gray-50 border border-noir2 border-opacity-40 dark:border-blanc4 dark:border-opacity-40 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-darkBlue relative z-30"
                 placeholder="e.g: name@telenet.be"
                 required
               />
@@ -628,7 +630,7 @@
                 type="text"
                 name="Subject"
                 id="subject"
-                class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-noir2 dark:border-opacity-40 border-opacity-40 dark:border-blanc4 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-darkBlue"
+                class="block relative z-30 p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-noir2 dark:border-opacity-40 border-opacity-40 dark:border-blanc4 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-darkBlue"
                 placeholder="Let us know how we can help you"
                 required
               />
@@ -643,7 +645,7 @@
                 id="message"
                 rows="6"
                 name="Message"
-                class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-noir2 border-opacity-40 dark:border-blanc4 dark:border-opacity-40 focus:ring-primary-500 focus:border-primary-500 dark:bg-darkBlue"
+                class="block relative z-30 p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-noir2 border-opacity-40 dark:border-blanc4 dark:border-opacity-40 focus:ring-primary-500 focus:border-primary-500 dark:bg-darkBlue"
                 placeholder="Leave a comment..."
               ></textarea>
             </div>
