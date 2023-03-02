@@ -21,7 +21,7 @@
 }
 
 #quality {
-  background-image: url("/images/safari.jpeg");
+  background-image: url("../images/safari.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -32,7 +32,7 @@
 
 @media (max-width: 900px) {
   #quality {
-    background-image: url("/images/safari.jpeg");
+    background-image: url("../images/safari.jpeg");
     background-position: center;
     height: 120px;
     filter: brightness(80%);
