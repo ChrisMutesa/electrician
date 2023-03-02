@@ -28,7 +28,7 @@
 */
 
 #hero {
-  background-image: url("/images/imageedit_1_3426126740.jpg");
+  background-image: url("../images/imageedit_1_3426126740.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
@@ -36,7 +36,7 @@
 
 @media (max-width: 576px) {
   #hero {
-    background-image: url("/images/imageedit_1_3426126740.jpg");
+    background-image: url("../images/imageedit_1_3426126740.jpg");
     background-position: center;
   }
 }
