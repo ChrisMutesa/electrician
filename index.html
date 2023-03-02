@@ -7,18 +7,32 @@
       href="https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap"
       rel="stylesheet"
     />
-    <script src="script.js" defer></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="input.css" />
+    <script src="js/script.js" defer></script>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <script>
+      // https://www.freecodecamp.org/news/how-to-build-a-dark-mode-switcher-with-tailwind-css-and-flowbite
+      if (
+        localStorage.getItem("color-theme") === "dark" ||
+        (!("color-theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
     <title>Strom</title>
   </head>
-  <body class="dark:bg-darkBlue dark:text-white">
+  <!-- dark body classes dark:bg-[#1c2431] dark:text-white -->
+
+  <body class="dark:bg-darkBlue dark:text-blanc font-opensans">
     <!-- Hero section -->
     <section id="hero">
       <!-- Above nav continput.css-->
-      <div class="bg-black bg-opacity-30">
+      <div class="bg-noir3 bg-opacity-30">
         <div
-          class="max-w-4xl mx-auto text-center text-white text-xs flex justify-around md:items-center md:space-x-2 pt-2 pb-2"
+          class="max-w-4xl mx-auto text-center text-blanc dark:text-noir3 text-xs flex justify-around md:items-center md:space-x-2 pt-2 pb-2"
         >
           <div class="flex animate-pulse">
             <img
@@ -48,18 +62,18 @@
       </div>
 
       <!-- Hero container -->
-      <div class="container max-w-6xl mx-auto px-6 py-12">
+      <div class="container relative max-w-6xl mx-auto px-6 py-12">
         <!-- Menu / Logo container -->
         <nav class="flex items-center justify-between font-bold text-white">
           <!-- Logo -->
           <div class="logo">
-            <h1 class="text-3xl text-bold md:pl-10 md:ml-8 anim">
+            <h1 class="text-3xl text-bold md:pl-10 md:ml-8 text-blanc">
               Elec<span class="text-[rgba(213,159,78,0.75)]">tric</span>al
             </h1>
           </div>
           <!-- Menu -->
           <div
-            class="hidden h-10 font-alata md:flex md:space-x-8 md:items-center"
+            class="hidden h-10 font-alata md:flex md:space-x-8 md:items-center text-blanc"
           >
             <div class="group text-[rgba(213,159,78,0.75)]">
               <a href="#home">Home</a>
@@ -110,7 +124,7 @@
         <!--  Mobile Menu -->
         <div
           id="menu"
-          class="absolute top-0 bottom-0 left-0 hidden flex-col self-end w-full min-h-screen py-1 pt-40 pl-12 space-y-3 text-lg text-white uppercase bg-black bg-opacity-80"
+          class="absolute top-0 bottom-0 left-0 hidden flex-col self-end w-full min-h-screen py-1 pt-40 pl-12 space-y-3 text-lg text-blanc uppercase bg-noir3 bg-opacity-80"
         >
           <a
             href="#about"
@@ -136,7 +150,7 @@
         <div class="pt-16">
           <div class="anim-1">
             <h2
-              class="max-w-lg text-center mx-auto mt-32 p-4 mb-5 font-alata text-3xl text-white uppercase md:pt-10 md:pl-10 md:pr-10 md:pb-2 md:mt-8 md:ml-8 md:mr-8 md:mx-0 md:text-4xl md:text-left anim"
+              class="max-w-lg text-center mx-auto mt-32 p-4 mb-5 font-alata text-3xl text-white uppercase md:pt-10 md:pl-10 md:pr-10 md:pb-2 md:mt-8 md:ml-8 md:mr-8 md:mx-0 md:text-4xl md:text-left text-blanc"
             >
               We provide the best electrical services
             </h2>
@@ -144,12 +158,46 @@
 
           <div class="anim-2">
             <p
-              class="max-w-xl text-center mx-auto mb-32 pl-4 pr-4 pb-4 font-alata text-lg text-white md:pl-10 md:pr-10 md:pb-10 md:mb-8 md:ml-8 md:mr-8 md:mx-0 md:text-2xl md:text-left anim"
+              class="max-w-xl text-center mx-auto mb-32 pl-4 pr-4 pb-4 font-alata text-lg text-white md:pl-10 md:pr-10 md:pb-10 md:mb-8 md:ml-8 md:mr-8 md:mx-0 md:text-2xl md:text-left text-blanc"
             >
               With our high level of professionalism, we turn your dream home
               ideas into reality in a short time!
             </p>
           </div>
+        </div>
+        <!-- Dark/Light Mode Button -->
+        <div class="absolute top-1 right-4 z-20">
+          <button
+            id="theme-toggle"
+            class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none animate-pulse ring-[rgba(213,159,78,0.75)] dark:focus:ring-gray-700 rounded-lg text-sm p-2 5"
+          >
+            <!-- Dark SVG Icon -->
+            <svg
+              id="theme-toggle-dark-icon"
+              class="w-6 h-6 hidden text-noir3 opacity-60"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+              ></path>
+            </svg>
+            <!-- Light SVG Icon -->
+            <svg
+              id="theme-toggle-light-icon"
+              class="w-6 h-6 hidden"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
         </div>
       </div>
     </section>
@@ -163,13 +211,13 @@
           class="flex flex-col space-y-6 md:space-y-10 mb-8 md:ml-16 md:mt-4 md:w-1/2 md:mx-w-lg"
         >
           <h1
-            class="text-3xl max-w-md pt-4 md:text-5xl font-bold text-center mx-auto md:mx-0 md:text-left text-gray-700"
+            class="text-3xl max-w-md pt-4 md:text-5xl font-bold text-center mx-auto md:mx-0 md:text-left text-noir dark:text-blanc2"
           >
             Welcome to <br />
             <span class="text-[rgba(213,159,78,0.75)]">Electrician Pro</span>
           </h1>
           <p
-            class="text-lg md:text-lg text-center text-gray-400 md:max-w-md md:text-left"
+            class="text-lg md:text-lg text-center text-noir2 md:max-w-md md:text-left dark:text-blanc3"
           >
             The remaining text we will put it after when we will have the final
             and whole idea of the project. Den restlichen Text werden wir
@@ -182,25 +230,49 @@
             <!-- 1st col -->
             <div class="flex flex-col space-y-1 md:space-y-4">
               <div class="flex flex-row items-center space-y-1 md:dpace-y-0">
-                <img
+                <!-- <img
                   src="images/Bildschirmfoto 2023-02-27 um 14.31.05.png"
                   alt=""
                   class="h-8 pr-2"
-                />
+                /> -->
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-8 h-8 pr-2 stroke-gold stroke-2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"
+                  />
+                </svg>
+
                 <p
-                  class="text-sm md:text-md text-gray-500 opacity-90 font-bold"
+                  class="text-sm md:text-md text-noir1 dark:text-blanc3 opacity-90 font-bold"
                 >
                   500 CLIENTS WE HAVE
                 </p>
               </div>
               <div class="flex flex-row items-center">
-                <img
-                  src="images/Bildschirmfoto 2023-02-27 um 14.31.05.png"
-                  alt=""
-                  class="h-8 pr-2 text-bold"
-                />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-8 h-8 pr-2 stroke-gold stroke-2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"
+                  />
+                </svg>
                 <p
-                  class="text-sm md:text-md text-gray-500 opacity-90 font-bold"
+                  class="text-sm md:text-md text-noir1 dark:text-blanc3 opacity-90 font-bold"
                 >
                   170 HIGH RANKING
                 </p>
@@ -209,25 +281,43 @@
             <!-- 2nd col -->
             <div class="flex flex-col space-y-1 md:space-y-4">
               <div class="flex flex-row items-center">
-                <img
-                  src="images/Bildschirmfoto 2023-02-27 um 14.31.05.png"
-                  alt=""
-                  class="h-8 pr-2 text-bold"
-                />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-8 h-8 pr-2 stroke-gold stroke-2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"
+                  />
+                </svg>
                 <p
-                  class="text-sm md:text-md text-gray-500 opacity-90 font-bold"
+                  class="text-sm md:text-md text-noir1 dark:text-blanc3 opacity-90 font-bold"
                 >
                   100 TOP EXPERTS
                 </p>
               </div>
               <div class="flex flex-row items-center">
-                <img
-                  src="images/Bildschirmfoto 2023-02-27 um 14.31.05.png"
-                  alt=""
-                  class="h-8 pr-2 text-bold"
-                />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-8 h-8 pr-2 stroke-gold stroke-2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"
+                  />
+                </svg>
                 <p
-                  class="text-sm md:text-md text-gray-500 opacity-90 font-bold"
+                  class="text-sm md:text-md text-noir1 dark:text-blanc3 opacity-90 font-bold"
                 >
                   37 ONLINE STRATEGIES
                 </p>
@@ -241,7 +331,7 @@
           <img
             src="images/mika-baumeister--oXb5tA61wI-unsplash.jpg"
             alt=""
-            class="rounded-lg transform hover:scale-105 duration-200 scale-90"
+            class="rounded-lg transform hover:scale-105 duration-200 scale-90 dark:brightness-75"
           />
         </div>
       </div>
@@ -250,7 +340,9 @@
     <!-- Services -->
     <section id="services">
       <!-- Global Container -->
-      <div class="flex flex-col items-center justify-center bg-[#fafafa]">
+      <div
+        class="flex flex-col items-center justify-center bg-[#fafafa] text-noir dark:text-blanc2 dark:bg-darkBlue1"
+      >
         <h2
           class="text-3xl max-w-md pt-8 font-bold text-center mx-auto md:mx-0 md:text-4xl md:text-left text-gray-700"
         >
@@ -263,14 +355,20 @@
         >
           <!-- 2nd card -->
           <div
-            class="max-w-sm w-72 md:w-60 lg:w-72 rounded-3xl overflow-hidden shadow-lg transform hover:scale-105 duration-500 hover:shadow-xl karte"
+            class="max-w-sm w-72 md:w-60 lg:w-72 rounded-3xl overflow-hidden shadow-lg transform hover:scale-105 duration-500 hover:shadow-xl karte dark:bg-darkBlue3"
           >
-            <img class="h-52 w-full" src="images/talala.png" alt="" />
+            <img
+              class="h-52 w-full dark:brightness-90"
+              src="images/talala.png"
+              alt=""
+            />
             <div class="px-8 pt-4 pb-4">
-              <div class="font-bold text-xl mb-2 text-gray-500 text-center">
+              <div
+                class="font-bold text-xl mb-2 text-noir1 dark:text-blanc2 text-center"
+              >
                 Installation
               </div>
-              <p class="text-gray-500 text-sm">
+              <p class="text-noir1 dark:text-blanc3 text-sm">
                 Electricians get called out a lot for the installation of new
                 gadgets or electrical features for the home or office. This can
                 include home theatre or sound systems, security systems , new
@@ -281,14 +379,20 @@
 
           <!-- 3rd card -->
           <div
-            class="max-w-sm w-72 md:w-60 lg:w-72 rounded-3xl overflow-hidden shadow-lg transform hover:scale-105 duration-500 hover:shadow-xl karte"
+            class="max-w-sm w-72 md:w-60 lg:w-72 rounded-3xl overflow-hidden shadow-lg transform hover:scale-105 duration-500 hover:shadow-xl karte dark:bg-darkblue3"
           >
-            <img class="w-full h-52" src="images/maintenance.png" alt="" />
+            <img
+              class="w-full h-52 dark:brightness-90"
+              src="images/maintenance.png"
+              alt=""
+            />
             <div class="px-8 pt-4 pb-4">
-              <div class="font-bold text-xl mb-2 text-gray-500 text-center">
+              <div
+                class="font-bold text-xl mb-2 text-noir1 dark:text-blanc2 text-center"
+              >
                 Maintenance
               </div>
-              <p class="text-gray-500 text-sm line-clamp-5">
+              <p class="text-noir1 dark:text-blanc3 text-sm line-clamp-5">
                 Electrical maintenance is so important to keep you safe and even
                 to save you money. So, it's no surprise that this makes the list
                 of the most common electrical services. Regular maintenance can
@@ -299,18 +403,20 @@
 
           <!-- 1st card -->
           <div
-            class="max-w-sm w-72 md:w-60 lg:w-72 rounded-3xl md:rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 duration-500 hover:shadow-xl karte"
+            class="max-w-sm w-72 md:w-60 lg:w-72 rounded-3xl md:rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 duration-500 hover:shadow-xl karte dark:bg-darkBlue3"
           >
             <img
-              class="w-full h-52 brightness-110"
+              class="w-full h-52 brightness-110 dark:brightness-90"
               src="images/wiring.png"
               alt=""
             />
             <div class="px-8 pt-4 pb-4">
-              <div class="font-bold text-xl mb-2 text-gray-500 text-center">
+              <div
+                class="font-bold text-xl mb-2 text-noir1 dark:text-blanc2 text-center"
+              >
                 Wiring
               </div>
-              <p class="text-gray-500 text-sm line-clamp-5">
+              <p class="text-noir1 dark:text-blanc3 text-sm line-clamp-5">
                 Every home needs safe and efficient wiring. For new buildings
                 it's crucial to get this right the first time as rewiring, or
                 repairs can be costly and inconvenient. For older homes, many
@@ -349,13 +455,13 @@
           class="flex flex-col space-y-8 mb-8 md:ml-16 md:mt-16 md:w-1/2 md:mx-w-lg"
         >
           <h1
-            class="text-2xl max-w-md font-bold text-center mx-auto md:mx-0 md:text-4xl md:text-left text-gray-700"
+            class="text-2xl max-w-md font-bold text-center mx-auto md:mx-0 md:text-4xl md:text-left text-noir dark:text-blanc2"
           >
             Why
             <span class="text-[rgba(213,159,78,0.75)]"> Choose Us</span>
           </h1>
           <p
-            class="text-lg max-w-sm mx-auto md:text-lg text-center text-gray-400 md:max-w-md md:text-left"
+            class="text-lg max-w-sm mx-auto md:text-lg text-center text-noir2 dark:text-blanc3 md:max-w-md md:text-left"
           >
             Den restlichen Text werden wir hinterlegen, wenn wir die endgültige
             und vollständige Idee des Projekts haben.
@@ -382,10 +488,12 @@
                   />
                 </svg>
                 <div>
-                  <h2 class="text-sm md:text-lg text-gray-500 font-bold">
+                  <h2
+                    class="text-sm md:text-lg text-noir1 dark:text-blanc3 font-extrabold"
+                  >
                     Free Estimate
                   </h2>
-                  <p class="text-gray-500 italic md:text-md">
+                  <p class="text-noir1 dark:text-blanc3 italic md:text-md">
                     Den restlichen Text werden wir hinterlegen, wenn wir die ...
                   </p>
                 </div>
@@ -411,10 +519,12 @@
                 </svg>
 
                 <div>
-                  <h2 class="text-sm md:text-lg text-gray-500 font-bold">
+                  <h2
+                    class="text-sm md:text-lg text-noir1 dark:text-blanc3 font-extrabold"
+                  >
                     Flat Rates
                   </h2>
-                  <p class="text-gray-500 italic md:text-md">
+                  <p class="text-noir1 dark:text-blanc3 italic md:text-md">
                     Den restlichen Text werden wir hinterlegen ...
                   </p>
                 </div>
@@ -440,10 +550,12 @@
                 </svg>
 
                 <div>
-                  <h2 class="text-sm md:text-lg text-gray-500 font-bold">
+                  <h2
+                    class="text-sm md:text-lg text-noir1 dark:text-blanc3 font-extrabold"
+                  >
                     24/7 services
                   </h2>
-                  <p class="text-gray-500 italic md:text-md">
+                  <p class="text-noir1 dark:text-blanc3 italic md:text-md">
                     The remaining text we will put it after when we will have
                     the final
                   </p>
@@ -467,17 +579,17 @@
     </section>
 
     <!-- Contact Us Section -->
-    <section id="contact" class="bg-[#fafafa]">
+    <section id="contact" class="bg-[#fafafa] dark:bg-darkBlue1">
       <!-- About Container -->
       <div>
         <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
           <h2
-            class="mb-4 text-3xl md:text-4xl tracking-tight font-extrabold text-center text-gray-600"
+            class="mb-4 text-3xl md:text-4xl tracking-tight font-extrabold text-center text-noir dark:text-blanc2"
           >
             Contact <span class="text-[rgba(213,159,78,0.75)]"> Us</span>
           </h2>
           <p
-            class="mb-8 lg:mb-16 font-light text-center text-gray-600 sm:text-xl"
+            class="mb-8 lg:mb-16 font-light text-center text-noir1 dark:text-blanc3 sm:text-xl"
           >
             Got a technical issue? Want to send feedback about our provided
             services? Need details about our offers? Please us know, we are here
@@ -494,14 +606,14 @@
             <div>
               <label
                 for="email"
-                class="block mb-2 text-sm font-medium text-gray-400"
+                class="block mb-2 text-sm font-medium text-noir dark:text-blanc2"
                 >Your email</label
               >
               <input
                 type="email"
                 id="email"
                 name="Name"
-                class="shadow-sm bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5"
+                class="shadow-sm bg-gray-50 border border-noir2 dark:border-blanc4 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-darkBlue"
                 placeholder="e.g: name@telenet.be"
                 required
               />
@@ -509,14 +621,14 @@
             <div>
               <label
                 for="subject"
-                class="block mb-2 text-sm font-medium text-gray-400"
+                class="block mb-2 text-sm font-medium text-noir dark:text-blanc2"
                 >Subject</label
               >
               <input
                 type="text"
                 name="Subject"
                 id="subject"
-                class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-200 shadow-sm focus:ring-primary-500 focus:border-primary-500"
+                class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-noir2 dark:border-blanc4 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-darkBlue"
                 placeholder="Let us know how we can help you"
                 required
               />
@@ -524,21 +636,21 @@
             <div class="sm:col-span-2">
               <label
                 for="message"
-                class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
+                class="block mb-2 text-sm font-medium text-noir dark:text-blanc2"
                 >Your message</label
               >
               <textarea
                 id="message"
                 rows="6"
                 name="Message"
-                class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-200 focus:ring-primary-500 focus:border-primary-500"
+                class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-noir2 dark:border-blanc4 focus:ring-primary-500 focus:border-primary-500 dark:bg-darkBlue"
                 placeholder="Leave a comment..."
               ></textarea>
             </div>
             <div class="max-w-fit mx-auto md:mx-0">
               <button
                 type="submit"
-                class="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-[rgba(213,159,78,0.75)] sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-gray-300 transform hover:scale-105 duration-300"
+                class="py-3 px-5 text-sm font-medium text-center text-blanc dark:text-blanc1 rounded-lg bg-[rgba(213,159,78,0.75)] sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-gray-300 transform hover:scale-105 duration-300"
               >
                 Send message
               </button>
@@ -562,14 +674,16 @@
             class="flex flex-col items-center space-y-8 md:items-start md:space-y-4"
           >
             <div class="h-8">
-              <h1 class="text-3xl font-bold text-gray-500 md:ml-8">
+              <h1
+                class="text-3xl font-bold text-noir1 dark:text-blanc2 md:ml-8"
+              >
                 Elec<span class="text-[rgba(213,159,78,0.75)]">tric</span>al
               </h1>
             </div>
 
             <!-- Menu container -->
             <div
-              class="flex flex-col items-center space-y-4 font-bold text-gray-500 md:flex-row md:md:space-y-0 md:space-x-6 md:ml-8"
+              class="flex flex-col items-center space-y-4 font-bold text-noir1 dark:text-blanc3 md:flex-row md:md:space-y-0 md:space-x-6 md:ml-8"
             >
               <!-- Item 1 -->
               <div class="h-10 group hover:text-[rgba(213,159,78,0.75)]">
@@ -603,7 +717,9 @@
           </div>
 
           <!-- Copyright container -->
-          <div class="flex items-center justify-center text-gray-500">
+          <div
+            class="flex items-center justify-center text-noir1 dark:text-blanc3"
+          >
             <!-- Copyright -->
             <div class="font-bold">
               &copy; 2023 Electrical. All Rights Reserved
@@ -612,9 +728,9 @@
         </div>
       </div>
       <!-- Above nav contacts -->
-      <div class="bg-black bg-opacity-10">
+      <div class="bg-noir dark:bg-darkBlue1 bg-opacity-10">
         <div
-          class="max-w-4xl mx-auto text-center text-gray-500 font-semibold text-xs flex justify-around md:items-center md:space-x-2 pt-2 pb-2"
+          class="max-w-4xl mx-auto text-center text-noir1 dark:text-blanc3 font-semibold text-xs flex justify-around md:items-center md:space-x-2 pt-2 pb-2"
         >
           Made with 💛 by Christian R.M.
         </div>
